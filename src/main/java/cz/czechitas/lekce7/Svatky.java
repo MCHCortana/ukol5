@@ -52,86 +52,37 @@ public class Svatky {
         svatky.put("Kamila", MonthDay.of(5, 31));
     }
 
-    /**
-     * Vrací den, kdy má zadané jméno svátek.
-     *
-     * @param jmeno Hledané jméno.
-     * @return Den a měsíc, případně {@code null}, pokud jméno nebylo nalezeno.
-     */
     public MonthDay vratKdyMaSvatek(String jmeno) {
-        //TODO
-        return null;
+        return svatky.get(jmeno);
     }
 
-    /**
-     * Vrací informaci, zda je dané jméno uvedeno v seznamu.
-     *
-     * @param jmeno Hledané jméno.
-     * @return {@code true}, pokud je jméno v seznamu. Jinak vrací {@code false}.
-     */
     public boolean jeVSeznamu(String jmeno) {
-        //TODO
-        return false;
+        return svatky.containsKey(jmeno);
     }
 
-    /**
-     * Vrací počet jmen uvedených v seznamu.
-     *
-     * @return
-     */
     public int getPocetJmen() {
-        //TODO
-        return 0;
+
+        return svatky.size();
     }
 
-    /**
-     * Vrací seznam jmen, pro které je uveden datum svátku.
-     *
-     * @return Neseřazený seznam jmen.
-     */
     public Set<String> getSeznamJmen() {
-        //TODO
-        return null;
+        return svatky.keySet();
     }
 
-    /**
-     * Přidá na seznam svátků nové jméno.
-     *
-     * @param jmeno    Jméno.
-     * @param denMesic Den a měsíc, kdy má dané jméno svátek.
-     */
     public void pridejSvatek(String jmeno, MonthDay denMesic) {
-        //TODO
+        svatky.put(jmeno, denMesic);
     }
 
-    /**
-     * Přidá na seznam svátků nové jméno.
-     *
-     * @param jmeno Jméno.
-     * @param den   Den v měsíci, kdy má dané jméno svátek (1–31).
-     * @param mesic Měsíc, kdy má dané jméno svátek (1–12).
-     */
     public void pridejSvatek(String jmeno, int den, int mesic) {
-        //TODO
+
+        svatky.put(jmeno, MonthDay.of(mesic, den));
     }
 
-    /**
-     * Přidá na seznam svátků nové jméno.
-     *
-     * @param jmeno Jméno.
-     * @param den   Den v měsíci, kdy má dané jméno svátek (1–31).
-     * @param mesic Měsíc, kdy má dané jméno svátek.
-     */
     public void pridejSvatek(String jmeno, int den, Month mesic) {
-        //TODO
+        svatky.put(jmeno, MonthDay.of(mesic, den));
     }
 
-    /**
-     * Smaže jméno ze seznamu svátků.
-     *
-     * @param jmeno Jméno ke smazání.
-     */
     public void smazSvatek(String jmeno) {
-        //TODO
+        svatky.remove(jmeno);
     }
 }
